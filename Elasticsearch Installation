@@ -1,0 +1,23 @@
+
+                                  Configuration of ElasticSearch on Ubuntu 
+1. Configure Java 
+  sudo apt install openjdk-8-jdk-headless 
+  sudo apt-get install openjdk-8-jre elasticsearch
+2 Configuring Elasticsearch (Generic install Elasticsearch 5.0-5.5 (mapper-attachments))
+  
+  2.1 Download and install via https://www.elastic.co/downloads/elasticsearch (5.0-5.5)
+ 
+  2.2 Install the Attachment plugin
+    sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install mapper-attachments
+  
+  2.3 Setting vm.max_map_count for Elasticsearch
+    sudo sysctl -w vm.max_map_count=262144
+ 
+  2.4 Enable and start the elasticsearch 
+      sudo systemctl restart elasticsearch
+      sudo systemctl enable  elasticsearch
+      sudo systemctl status elasticsearch
+ 
+ 
+
+Required Links : https://docs.zammad.org/en/latest/install-elasticsearch.html#install-elasticsearch
